@@ -1,0 +1,31 @@
+<!-- app/views/games/new.html.erb -->
+<%= form_with model: @game, local: true, class: 'needs-validation', novalidate: true do |form| %>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">New Game Setup</h5>
+      <div class="mb-3">
+        <%= form.label :player_count, 'Number of Players', class: 'form-label' %>
+        <%= form.number_field :player_count, class: 'form-control', placeholder: 'Enter number of players', min: 1, required: true %>
+        <div class="invalid-feedback">Please enter a valid number of players.</div>
+      </div>
+      <div class="mb-3">
+        <%= form.label :dice_count, 'Number of Dice', class: 'form-label' %>
+        <%= form.number_field :dice_count, class: 'form-control', placeholder: 'Enter number of dice', min: 1, required: true %>
+        <div class="invalid-feedback">Please enter a valid number of dice.</div>
+      </div>
+      <div class="mb-3">
+        <%= form.label :sides, 'Number of Sides on Dice', class: 'form-label' %>
+        <%= form.number_field :sides, class: 'form-control', placeholder: 'Enter number of sides', min: 1, required: true %>
+        <div class="invalid-feedback">Please enter a valid number of sides for the dice.</div>
+      </div>
+      <%= form.submit 'Start Game', class: 'btn btn-primary' %>
+      <% if current_user %>
+        <%= link_to 'Go Back', user_page_path(current_user), class: 'btn btn-primary' %> 
+      <% else %>
+        <%= link_to 'Go Back', root_path, class: 'btn btn-primary ' %> 
+      <% end %>
+        <%= link_to 'Exit', new_session_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+<% end %>
+

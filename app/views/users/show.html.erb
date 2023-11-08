@@ -1,0 +1,22 @@
+<!-- app/views/users/show.html.erb -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <h1 class="text-center mb-3">Welcome <%= @user.username %></h1>
+      <p class="lead text-center mb-5">What would you like to do today?</p>
+      
+      <div class="mb-3">
+        <%= link_to 'Play New Game', play_new_game_path, class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %>
+      </div>
+
+      <div class="mb-3">
+        <%= link_to 'View Game History', history_games_path, class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %>
+      </div>
+
+      <div class="mb-3">
+        <%= button_to 'Sign Out', sign_out_path, method: :delete, class: 'btn btn-danger btn-lg btn-block shadow-sm', data: { confirm: 'Are you sure?' } %>
+      </div>
+      
+    </div>
+  </div>
+</div>

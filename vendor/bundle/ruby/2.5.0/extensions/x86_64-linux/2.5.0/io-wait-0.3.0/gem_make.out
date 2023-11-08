@@ -1,0 +1,11 @@
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+/usr/bin/ruby2.5 -r ./siteconf20231105-28127-15ddawz.rb extconf.rb
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+make "DESTDIR=" clean
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+make "DESTDIR="
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+make "DESTDIR=" install

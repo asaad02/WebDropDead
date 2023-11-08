@@ -1,0 +1,41 @@
+<!-- app/views/games/history.html.erb -->
+<%= form_with url: history_games_path, method: :get, local: true do |form| %>
+  <%= form.label :game_id, 'Enter Game ID:' %>
+  <%= form.number_field :game_id %>
+  <%= form.submit 'Select' %>
+<% end %>
+
+<% if @selected_game %>
+  <h2>Selected Game Details</h2>
+  <p>ID: <%= @selected_game.id %></p>
+  <p>Created At: <%= @selected_game.created_at %></p>
+  <p>Player Count: <%= @selected_game.player_count %></p>
+  <p>Dice Count: <%= @selected_game.dice_count %></p>
+  <p>Sides: <%= @selected_game.sides %></p>
+
+  
+  <h3>Game Results:</h3>
+  <% if @selected_game.results.any? %>
+    <% @selected_game.results.each do |result| %>
+      <p><%= result %></p>
+    <% end %>
+  <% else %>
+    <p>No results for this game.</p>
+  <% end %>
+<% elsif @games.present? %>
+  <h2>All Game Histories</h2>
+  <% @games.each do |game| %>
+    <p>Game ID: <%= game.id %>, Created At: <%= game.created_at %></p>
+    <!-- Add more details if needed -->
+  <% end %>
+<% else %>
+  <p>No game history available.</p>
+<% end %>
+
+
+<% if current_user %>
+  <%= link_to 'Go Back', user_page_path(current_user), class: 'button' %> 
+<% else %>
+  <%= link_to 'Go Back', root_path, class: 'button' %> 
+<% end %>
+<%= link_to 'Exit', new_session_path, class: 'button' %>

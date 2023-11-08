@@ -1,0 +1,19 @@
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/digest-3.1.1/ext/digest/sha2
+/usr/bin/ruby2.5 -r ./siteconf20231105-28127-kncwnh.rb extconf.rb
+checking for CommonCrypto/CommonDigest.h... no
+checking for u_int8_t... yes
+checking for sys/cdefs.h... yes
+creating Makefile
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/digest-3.1.1/ext/digest/sha2
+make "DESTDIR=" clean
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/digest-3.1.1/ext/digest/sha2
+make "DESTDIR="
+compiling sha2.c
+compiling sha2init.c
+linking shared-object digest/sha2.so
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/digest-3.1.1/ext/digest/sha2
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 sha2.so ./.gem.20231105-28127-y9llo1/digest

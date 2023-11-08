@@ -1,0 +1,17 @@
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/strscan-3.0.7/ext/strscan
+/usr/bin/ruby2.5 -r ./siteconf20231105-28127-1p3x4rs.rb extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+checking for rb_reg_onig_match() in ruby.h... no
+creating Makefile
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/strscan-3.0.7/ext/strscan
+make "DESTDIR=" clean
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/strscan-3.0.7/ext/strscan
+make "DESTDIR="
+compiling strscan.c
+linking shared-object strscan.so
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/strscan-3.0.7/ext/strscan
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 strscan.so ./.gem.20231105-28127-98d1eg

@@ -1,0 +1,49 @@
+<!-- app/views/sessions/new.html.erb -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      
+      <!-- Welcome Message -->
+      <div class="text-center mb-4">
+        <h1>Welcome to AutoDropDead Game</h1>
+        <p class="lead">Sign in  and play!</p>
+      </div>
+
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="card-title mb-4 text-center">Sign In</h2>
+          <%= form_with scope: :session, url: session_path, local: true, html: { class: "needs-validation", novalidate: "" } do |form| %>
+            
+            <!-- Email Field -->
+            <div class="form-floating mb-3">
+              <%= form.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true, required: true, id: 'floatingInput' %>
+              <%= form.label :email, 'Email address', class: 'floatingLabel' %>
+              <div class="invalid-feedback">
+                Please enter your email.
+              </div>
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-floating mb-3">
+              <%= form.password_field :password, class: 'form-control', placeholder: 'Password', required: true, id: 'floatingPassword' %>
+              <%= form.label :password, 'Password', class: 'floatingLabel' %>
+              <div class="invalid-feedback">
+                Please enter your password.
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid gap-2">
+              <%= form.submit 'Sign In', class: 'btn btn-primary' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <p class="text-center mt-3">
+        Don't have an account? <%= link_to 'Sign Up', new_user_path, class: 'text-primary' %>
+      </p>
+      
+    </div>
+  </div>
+</div>

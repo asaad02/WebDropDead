@@ -1,0 +1,20 @@
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/puma-5.6.7/ext/puma_http11
+/usr/bin/ruby2.5 -r ./siteconf20231105-28127-1y2u32q.rb extconf.rb
+checking for BIO_read() in -lcrypto... no
+checking for BIO_read() in -llibeay32... no
+** Puma will be compiled without SSL support
+creating Makefile
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/puma-5.6.7/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/puma-5.6.7/ext/puma_http11
+make "DESTDIR="
+compiling http11_parser.c
+compiling mini_ssl.c
+compiling puma_http11.c
+linking shared-object puma/puma_http11.so
+
+current directory: /home/undergrad/3/asaad02/Desktop/CIS3260/AutoDropDead/WebDropDead/vendor/bundle/ruby/2.5.0/gems/puma-5.6.7/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20231105-28127-z7nj7n/puma
