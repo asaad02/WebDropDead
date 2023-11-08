@@ -1,49 +1,66 @@
 <!-- app/views/sessions/new.html.erb -->
 <div class="container mt-5">
   <div class="row justify-content-center">
-    <div class="col-lg-6 col-md-8">
-      
-      <!-- Welcome Message -->
-      <div class="text-center mb-4">
-        <h1>Welcome to AutoDropDead Game</h1>
-        <p class="lead">Sign in  and play!</p>
-      </div>
+  <!-- Welcome Message -->
+  <div class="text-center mb-4">
+    <h1>Welcome to AutoDropDead Game</h1>
+    <p class="lead">Sign in  and play!</p>
+  </div>
 
+    <!-- Sign In Card -->
+    <div class="col-lg-5 mb-4">
       <div class="card shadow">
         <div class="card-body">
           <h2 class="card-title mb-4 text-center">Sign In</h2>
           <%= form_with scope: :session, url: session_path, local: true, html: { class: "needs-validation", novalidate: "" } do |form| %>
-            
-            <!-- Email Field -->
             <div class="form-floating mb-3">
               <%= form.email_field :email, class: 'form-control', placeholder: 'Email', autofocus: true, required: true, id: 'floatingInput' %>
               <%= form.label :email, 'Email address', class: 'floatingLabel' %>
-              <div class="invalid-feedback">
-                Please enter your email.
-              </div>
+              <div class="invalid-feedback">Please enter your email.</div>
             </div>
-
-            <!-- Password Field -->
             <div class="form-floating mb-3">
               <%= form.password_field :password, class: 'form-control', placeholder: 'Password', required: true, id: 'floatingPassword' %>
               <%= form.label :password, 'Password', class: 'floatingLabel' %>
-              <div class="invalid-feedback">
-                Please enter your password.
-              </div>
+              <div class="invalid-feedback">Please enter your password.</div>
             </div>
-
-            <!-- Submit Button -->
-            <div class="d-grid gap-2">
+            <div class="d-grid">
               <%= form.submit 'Sign In', class: 'btn btn-primary' %>
             </div>
           <% end %>
         </div>
       </div>
+    </div>
+  <div class="text-center mb-4">
+    <p class="lead">Sign up  and play!</p>
+  </div>
+    <!-- Sign Up Card -->
+    <div class="col-lg-5 mb-4">
+      <div class="card shadow">
 
-      <p class="text-center mt-3">
-        Don't have an account? <%= link_to 'Sign Up', new_user_path, class: 'text-primary' %>
-      </p>
-      
+        <div class="card-body">
+        <h2 class="card-title mb-4 text-center">Sign up</h2>
+          <%= form_with model: @user, local: true, class: 'needs-validation', novalidate: true do |form| %>
+            <div class="form-floating mb-3">
+              <%= form.text_field :username, class: 'form-control', placeholder: 'Username', required: true, id: 'floatingUsername' %>
+              <%= form.label :username, 'Username', class: 'floatingLabel' %>
+              <div class="invalid-feedback">Username can't be blank.</div>
+            </div>
+            <div class="form-floating mb-3">
+              <%= form.email_field :email, class: 'form-control', placeholder: 'Email', required: true, id: 'floatingEmail' %>
+              <%= form.label :email, 'Email', class: 'floatingLabel' %>
+              <div class="invalid-feedback">Please provide a valid email address.</div>
+            </div>
+            <div class="form-floating mb-3">
+              <%= form.password_field :password, class: 'form-control', placeholder: 'Password', required: true, id: 'floatingSignUpPassword' %>
+              <%= form.label :password, 'Password', class: 'floatingLabel' %>
+              <div class="invalid-feedback">Password can't be blank.</div>
+            </div>
+            <div class="d-grid">
+              <%= form.submit 'Sign Up', class: 'btn btn-primary' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

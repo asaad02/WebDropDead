@@ -12,14 +12,12 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id # This will sign in the user upon account creation.
       redirect_to user_page_path(@user), notice: 'Account created successfully.'
     else
-      render :new
+      render template: 'sessions/new'
     end
   end
 
   def show
   end
-
-  private
 
   def user_params
     params.require(:user).permit(:username, :email, :password)

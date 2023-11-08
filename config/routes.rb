@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post 'users', to: 'users#create', as: :users
   get 'user/:id', to: 'users#show', as: :user_page  # Assuming you have a show action in UsersController
   get 'sign_in', to: 'sessions#new', as: :new_session
-  post 'sign_in', to: 'sessions#create', as: :session  # Assuming you have a create action in SessionsController
+  post 'sign_in', to: 'sessions#create', as: :session   # Assuming you have a create action in SessionsController
   delete 'sign_out', to: 'sessions#destroy', as: :sign_out  # Assuming you have a destroy action in SessionsController
 
   # Define a route for the game history page

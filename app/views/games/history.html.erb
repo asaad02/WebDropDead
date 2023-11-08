@@ -32,10 +32,10 @@
   <p>No game history available.</p>
 <% end %>
 
-
 <% if current_user %>
-  <%= link_to 'Go Back', user_page_path(current_user), class: 'button' %> 
+<%= link_to 'Go Back', user_page_path(current_user), class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %> 
 <% else %>
-  <%= link_to 'Go Back', root_path, class: 'button' %> 
+<%= link_to 'Go Back', root_path, class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %> 
 <% end %>
-<%= link_to 'Exit', new_session_path, class: 'button' %>
+<%= link_to 'Exit', new_session_path, class: 'btn btn-danger btn-lg btn-block shadow-sm' %>
+</div>

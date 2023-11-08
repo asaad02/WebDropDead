@@ -8,9 +8,10 @@
 
 <%= link_to 'Play Again', replay_game_path(@game), method: :post  , class: 'btn btn-primary' %>
 <% if current_user %>
-      <%= link_to 'Go Back', user_page_path(current_user), class: 'btn btn-primary' %> 
+  <%= link_to 'Go Back', user_page_path(current_user), class: 'btn btn-primary' %> 
 <% else %>
-  <%= link_to 'Go Back', root_path, class: 'btn btn-primary ' %> 
+  <%= link_to 'Go Back', root_path, class: 'btn btn-primary' %>
 <% end %>
-  <%= link_to 'Exit', new_session_path, class: 'btn btn-primary' %>
+
+
 

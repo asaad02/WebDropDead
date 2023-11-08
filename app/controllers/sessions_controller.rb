@@ -1,6 +1,7 @@
 # app/controllers/sessions_controller.rb
 class SessionsController < ApplicationController
   def new
+    @user = User.new 
   end
 
   def create
