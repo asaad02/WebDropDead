@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    helper_method :current_user # Makes current_user method available in views
+    helper_method :current_user 
 
   private
 

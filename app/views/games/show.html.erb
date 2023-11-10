@@ -6,11 +6,12 @@
   <p>No results available.</p>
 <% end %>
 
-<%= link_to 'Play Again', replay_game_path(@game), method: :post  , class: 'btn btn-primary' %>
+<%= link_to 'Play Again', replay_game_path(@game), method: :post  , class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %>
+<%= link_to 'Change Settings', play_new_game_path, class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %>
 <% if current_user %>
-  <%= link_to 'Go Back', user_page_path(current_user), class: 'btn btn-primary' %> 
+  <%= link_to 'Go Back', user_page_path(current_user), class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %> 
 <% else %>
-  <%= link_to 'Go Back', root_path, class: 'btn btn-primary' %>
+  <%= link_to 'Go Back', root_path, class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %>
 <% end %>
 
 

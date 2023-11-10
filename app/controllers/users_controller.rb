@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def create
     if @user.save
-      session[:user_id] = @user.id # This will sign in the user upon account creation.
+      session[:user_id] = @user.id 
       redirect_to user_page_path(@user), notice: 'Account created successfully.'
     else
       render template: 'sessions/new'

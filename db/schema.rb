@@ -23,15 +23,6 @@ ActiveRecord::Schema.define(version: 2023_11_08_062301) do
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 
-  create_table "players", force: :cascade do |t|
-    t.string "name"
-    t.integer "score"
-    t.integer "game_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_players_on_game_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"

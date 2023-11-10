@@ -14,11 +14,8 @@ class Game < ApplicationRecord
 
   def play_game!
     auto_drop_dead = AutoDropDead::AutoDropDead.new(sides, dice_count, player_count)
-    #auto_drop_dead = AutoDropDead::AutoDropDead.new(6,6,6)
     self.results = auto_drop_dead.play_game
-    # Return the results without immediately saving, to allow controller to handle it
     results
-    
   end
 
 end

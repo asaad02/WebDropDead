@@ -1,14 +1,14 @@
 <!-- app/views/sessions/new.html.erb -->
 <div class="container mt-5">
   <div class="row justify-content-center">
-  <!-- Welcome Message -->
-  <div class="text-center mb-4">
-    <h1>Welcome to AutoDropDead Game</h1>
-    <p class="lead">Sign in  and play!</p>
-  </div>
+    <!-- Welcome Message -->
+    <div class="col-12 text-center mb-4">
+      <h1>Welcome to AutoDropDead Game</h1>
+      <p class="lead">Sign in and play!</p>
+    </div>
 
     <!-- Sign In Card -->
-    <div class="col-lg-5 mb-4">
+    <div class="col-12 col-md-8 col-lg-5 mb-4">
       <div class="card shadow">
         <div class="card-body">
           <h2 class="card-title mb-4 text-center">Sign In</h2>
@@ -24,22 +24,22 @@
               <div class="invalid-feedback">Please enter your password.</div>
             </div>
             <div class="d-grid">
-              <%= form.submit 'Sign In', class: 'btn btn-primary' %>
+              <%= form.submit 'Sign In', class: 'btn btn-primary btn-block' %>
             </div>
           <% end %>
         </div>
       </div>
     </div>
-  <div class="text-center mb-4">
-    <p class="lead">Sign up  and play!</p>
-  </div>
-    <!-- Sign Up Card -->
-    <div class="col-lg-5 mb-4">
-      <div class="card shadow">
 
+    <!-- Space between cards on smaller screens -->
+    <div class="w-100 d-block d-lg-none mb-4"></div> <!-- This will only show as a space on small screens -->
+
+    <!-- Sign Up Card -->
+    <div class="col-12 col-md-8 col-lg-5 mb-4">
+      <div class="card shadow">
         <div class="card-body">
-        <h2 class="card-title mb-4 text-center">Sign up</h2>
-          <%= form_with model: @user, local: true, class: 'needs-validation', novalidate: true do |form| %>
+          <h2 class="card-title mb-4 text-center">Sign Up</h2>
+          <%= form_with model: @user, url: users_path, local: true, html: { class: "needs-validation", novalidate: "" } do |form| %>
             <div class="form-floating mb-3">
               <%= form.text_field :username, class: 'form-control', placeholder: 'Username', required: true, id: 'floatingUsername' %>
               <%= form.label :username, 'Username', class: 'floatingLabel' %>
@@ -56,7 +56,7 @@
               <div class="invalid-feedback">Password can't be blank.</div>
             </div>
             <div class="d-grid">
-              <%= form.submit 'Sign Up', class: 'btn btn-primary' %>
+              <%= form.submit 'Sign Up', class: 'btn btn-primary btn-block' %>
             </div>
           <% end %>
         </div>

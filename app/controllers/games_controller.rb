@@ -7,7 +7,6 @@ class GamesController < ApplicationController
   end
 
   def create
-    #@game = Game.new(game_params)
     @game = current_user.games.new(game_params)
   
     if @game.save
@@ -23,7 +22,6 @@ class GamesController < ApplicationController
     end
   end
 
-  # Modify the show action to handle displaying a specific game from the history page
   def show
     if params[:game_id]
       @game = Game.find_by_id(params[:game_id])
@@ -51,7 +49,6 @@ class GamesController < ApplicationController
   end
 
   def replay
-    # Use attributes from the existing game to create a new game for replay
     replayed_game_attrs = @game.attributes.except("id", "created_at", "updated_at", "results")
     @new_game = current_user.games.new(replayed_game_attrs)
     
@@ -69,6 +66,8 @@ class GamesController < ApplicationController
     end
   end
 
+  private
+  
   def set_game
     @game = Game.find(params[:id])
   end

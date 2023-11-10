@@ -1,4 +1,3 @@
-# app/services/auto_drop_dead.rb
 module AutoDropDead
   class AutoDropDead
     attr_reader :players, :dice, :turn_tracker, :game_ui
@@ -8,7 +7,7 @@ module AutoDropDead
       @players = Array.new(player_count) { |i| Player.new("Player #{i + 1}", dice_count) }
       @turn_tracker = TurnTracker.new(@players)
       @game_ui = GameUI.new
-      @eliminated_players = [] # Initialize an array to track eliminated players
+      @eliminated_players = [] 
     end
 
     def play_game
@@ -28,7 +27,7 @@ module AutoDropDead
         RollChecker.evaluate_roll(current_player, roll_values, game_ui)
         
         if current_player.out_of_dice?
-          eliminate_player(current_player) # Eliminate the player
+          eliminate_player(current_player) 
         else
           turn_tracker.advance_turn
         end
@@ -36,11 +35,9 @@ module AutoDropDead
     end
 
     def determine_winner
-      # Determine the winner from all players, including eliminated ones
       (players + @eliminated_players).max_by(&:score)
     end
 
-    # Track eliminated players
     def eliminate_player(player)
       game_ui.add_message("#{player.name} has been eliminated with a score of #{player.score}.")
       @eliminated_players << player
@@ -101,30 +98,30 @@ module AutoDropDead
     end
 
     def advance_turn
-      current_player # The cycle method makes the player array act like a circular buffer.
+      current_player 
     end
   end
-end
 
-# Assuming Player class is defined elsewhere in your application.
-class Player
-  attr_accessor :name, :dice_count, :score
+  class Player
+    attr_accessor :name, :dice_count, :score
 
-  def initialize(name, dice_count)
-    @name = name
-    @dice_count = dice_count
-    @score = 0
+    def initialize(name, dice_count)
+      @name = name
+      @dice_count = dice_count
+      @score = 0
+    end
+
+    def out_of_dice?
+      @dice_count <= 0
+    end
+
+    def lose_dice(count)
+      @dice_count -= count
+    end
+
+    def add_score(points)
+      @score += points
+    end
   end
 
-  def out_of_dice?
-    @dice_count <= 0
-  end
-
-  def lose_dice(count)
-    @dice_count -= count
-  end
-
-  def add_score(points)
-    @score += points
-  end
 end
