@@ -8,29 +8,28 @@
 
 ## Implementation Checklist
 
-| Page | Requirement | Implemented | Notes |
-|------|-------------|-------------|-------|
-| Sign-In Page | User is prompted for email and password. |  |  |
-|  | User can submit credentials. |  |  |
-|  | Error handling for non-existent user. |  |  |
-|  | Error handling for incorrect password. |  |  |
-|  | Redirect to "User Page" if exists after successful login. |  |  |
-|  | Redirect to "Play Game" page if "User Page" doesn't exist. |  |  |
-| Sign-Up Page | User can enter a username, email, and password. |  |  |
-|  | User can submit the sign-up form. |  |  |
-|  | On sign-up, user is provided with game quarters and dice. |  |  |
-|  | User's initial points are set to 0. |  |  |
-|  | Redirect to "User Page" or "Play Game" after successful sign-up. |  |  |
-| User Page (Optional) | Page presents options for new game, history, and exit. |  |  |
-|  | Implements "Play New Game" functionality. |  |  |
-|  | Implements "View Game History" functionality. |  |  |
-|  | Implements "Exit" functionality. |  |  |
-| Play Game Page | User is asked for the number of players, dice sides, and dice count. |  |  |
-|  | Game can be played with provided settings. |  |  |
-|  | Option to play again with the same settings. |  |  |
-|  | Option to change settings. |  |  |
-|  | Option to go back. |  |  |
-| Game History Page (Optional) | Displays saved game dates, times, and IDs. |  |  |
-|  | Allows user to select and view a saved game. |  |  |
-|  | Option to go back or exit. |  |  |
+| Page            | Requirement                                              | Implemented |
+|-----------------|----------------------------------------------------------|-------------|
+| Sign-In Page    | User is prompted for email and password.                 | [x]         |
+|                 | User can submit credentials.                             | [x]         |
+|                 | Error handling for non-existent user.                    | [x]         |
+|                 | Error handling for incorrect password.                   | [x]         |
+|                 | Redirect to "User Page" if exists after successful login.| [x]         |
+| Sign-Up Page    | User can enter a username, email, and password.          | [x]         |
+|                 | User can submit the sign-up form.                        | [x]         |
+|                 | On sign-up, user is provided with game quarters and dice.| [x]         |
+|                 | User's initial points are set to 0.                      | [x]         |
+|                 | Redirect to "User Page" after successful sign-up.        | [x]         |
+| User Page       | Page presents options for new game, history, and exit.   | [x]         |
+|                 | Implements "Play New Game" functionality.                | [x]         |
+|                 | Implements "View Game History" functionality.            | [x]         |
+|                 | Implements "Exit" functionality.                         | [x]         |
+| Play Game Page  | User is asked for the number of players, dice sides, and dice count.| [x] |
+|                 | Game can be played with provided settings.               | [x]         |
+|                 | play again with the same settings.                       | [x]         |
+|                 | Option to change settings.                               | [x]         |
+|                 | Option to go back.                                       | [x]         |
+| Game History Page| Displays saved game dates, times, and IDs.              | [x]         |
+|                 | Allows user to select and view a saved game.             | [x]         |
+|                 | Option to go back or exit.                               | [x]         |
 
