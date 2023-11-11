@@ -1,18 +1,26 @@
 <!-- app/views/games/history.html.erb -->
 <%= form_with url: history_games_path, method: :get, local: true do |form| %>
-  <%= form.label :game_id, 'Enter Game ID:' %>
-  <%= form.number_field :game_id %>
+  <%= form.label :user_game_number, 'Enter Game Number:' %>
+  <%= form.number_field :user_game_number %>
   <%= form.submit 'Select' %>
+<% end %>
+
+<h2>All Game Histories</h2>
+<% if @games.present? %>
+  <% @games.each do |game| %>
+    <p>Game ID: <%= game.user_game_number %>, Created At: <%= game.created_at.strftime("%B %d, %Y %H:%M") %></p>
+  <% end %>
+<% else %>
+  <p>No game history available.</p>
 <% end %>
 
 <% if @selected_game %>
   <h2>Selected Game Details</h2>
-  <p>ID: <%= @selected_game.id %></p>
-  <p>Created At: <%= @selected_game.created_at %></p>
+  <p>Game ID: <%= @selected_game.user_game_number %></p>
+  <p>Created At: <%= @selected_game.created_at.strftime("%B %d, %Y %H:%M") %></p>
   <p>Player Count: <%= @selected_game.player_count %></p>
   <p>Dice Count: <%= @selected_game.dice_count %></p>
   <p>Sides: <%= @selected_game.sides %></p>
-
   
   <h3>Game Results:</h3>
   <% if @selected_game.results.any? %>
@@ -22,20 +30,14 @@
   <% else %>
     <p>No results for this game.</p>
   <% end %>
-<% elsif @games.present? %>
-  <h2>All Game Histories</h2>
-  <% @games.each do |game| %>
-    <p>Game ID: <%= game.id %>, Created At: <%= game.created_at %></p>
-    <!-- Add more details if needed -->
-  <% end %>
-<% else %>
-  <p>No game history available.</p>
 <% end %>
 
+
+
+<%# Navigation links %>
 <% if current_user %>
-<%= link_to 'Go Back', user_page_path(current_user), class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %> 
+  <%= link_to 'Go Back', user_page_path(current_user), class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %> 
 <% else %>
-<%= link_to 'Go Back', root_path, class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %> 
+  <%= link_to 'Go Back', root_path, class: 'btn btn-outline-primary btn-lg btn-block shadow-sm' %> 
 <% end %>
 <%= link_to 'Exit', new_session_path, class: 'btn btn-danger btn-lg btn-block shadow-sm' %>
-</div>

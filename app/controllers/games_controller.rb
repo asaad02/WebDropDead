@@ -37,14 +37,15 @@ class GamesController < ApplicationController
   
 
   def history
-    if params[:game_id].present?
-      @selected_game = current_user.games.find_by(id: params[:game_id])
+    @games = current_user.games.order(:user_game_number)
+    if params[:user_game_number].present?
+      @selected_game = current_user.games.find_by(user_game_number: params[:user_game_number])
       unless @selected_game
-        flash[:alert] = "Game not found with ID: #{params[:game_id]}"
+        flash[:alert] = "Game not found with Number: #{params[:user_game_number]}"
         redirect_to history_games_path
       end
     else
-      @games = current_user.games.order(created_at: :desc)
+      @games = current_user.games.order(:user_game_number)
     end
   end
 
@@ -67,7 +68,7 @@ class GamesController < ApplicationController
   end
 
   private
-  
+
   def set_game
     @game = Game.find(params[:id])
   end

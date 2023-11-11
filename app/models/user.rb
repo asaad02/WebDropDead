@@ -2,14 +2,7 @@
 class User < ApplicationRecord
   has_secure_password
   has_many :games
-
-  before_create :set_default_values
-
-  private
-
-  def set_default_values
-    self.quarters ||= 3
-    self.dice ||= 3
-    self.points ||= 0
-  end
+  validates :username, presence: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :password, presence: true
 end

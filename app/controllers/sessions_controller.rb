@@ -4,18 +4,18 @@ class SessionsController < ApplicationController
     @user = User.new 
   end
 
+
   def create
     user = User.find_by(email: params[:session][:email])
-    if user.nil?
-      flash.now[:alert] = 'User does not exist. Please sign up.'
-      render :new
-    elsif user.authenticate(params[:session][:password])
+    if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to user_page_path(user)
+      redirect_to user_page_path(user), notice: 'Signed in successfully.'
+    elsif user.nil?
+      redirect_to new_session_path, notice: 'User does not exist. Please sign up.'
     else
-      flash.now[:alert] = 'Password is incorrect.'
-      render :new
+      redirect_to new_session_path, notice: 'Password is incorrect.'
     end
+    
   end
 
   def destroy

@@ -8,16 +8,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    if @user.save
+    @user = User.new(user_params)
+    if User.exists?(email: @user.email)
+      redirect_to new_session_path, alert: 'Email already exists. Please use a different email.'
+    elsif @user.save
       session[:user_id] = @user.id 
       redirect_to user_page_path(@user), notice: 'Account created successfully.'
     else
-      render template: 'sessions/new'
+      render :new  
     end
   end
 
   def show
   end
+
 
   def user_params
     params.require(:user).permit(:username, :email, :password)
@@ -26,6 +30,7 @@ class UsersController < ApplicationController
   def authenticate_user
     redirect_to new_session_path, alert: 'You must be signed in to access that page.' unless current_user
   end
+
 
   def set_user
     @user = current_user || User.new(user_params)
