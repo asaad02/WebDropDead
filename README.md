@@ -1,10 +1,8 @@
 # WebDropDead
 
-**URL**: [WebDropDead](http://cis3260.socs.uoguelph.ca:35105/)
 
 **Author**: Abdullah Saad  
-**Course**: CIS*3260 F23  
-**Assignment**: 2 - Ruby on Rails
+
 
 ## Implementation Checklist
 
